@@ -29,15 +29,16 @@ app.get("/api/notes", (req, res) => {
           console.log('DB --->', db)
           res.sendFile(data)
       });
-})
+});
 
 app.post("/api/notes", function(req, res) => {
     res.json();
-}
+});
 
 app.delete('/api/notes/:id', (req, res) => {
-}
+});
 
 app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:${PORT}`)
+    console.log(`App listening at http://localhost:${PORT}`)
 });
+
