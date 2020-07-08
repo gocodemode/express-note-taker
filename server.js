@@ -9,8 +9,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-require("./routes/apiroutes")(app);
-require("./routes/htmlroutes")(app);
+// require("./routes/apiroutes")(app);
+// require("./routes/htmlroutes")(app);
 
 app.get("/",(req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"));
@@ -25,10 +25,7 @@ app.get("/api/notes", (req, res) => {
      fs.readFile('./db/db.json', (err, data) => {
         if (err) throw err;
         return data;
-      }).then(db => {
-          console.log('DB --->', db)
-          res.sendFile(data)
-      });
+      })
 });
 
 app.post("/api/notes", (req, res) => {
